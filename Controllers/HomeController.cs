@@ -15,6 +15,7 @@ namespace EmployeeDBFirstDemo.Controllers
 
         public IActionResult Index()
         {
+            var res = "hey";
             return View();
         }
 
