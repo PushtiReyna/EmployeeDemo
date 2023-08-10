@@ -21,7 +21,8 @@ public partial class Employee
     [Required(ErrorMessage = "Please enter your Username"), MaxLength(10)]
     public string Username { get; set; } = null!;
 
-    [Required(ErrorMessage = "Please enter your Password")]
+    [Required(ErrorMessage = "Please enter your Password"),MinLength(6),MaxLength(10)]
+    [RegularExpression(@"^((?=.*[a-z])(?=.*[A-Z])(?=.*\d)).+$",ErrorMessage = "Password must contain uppercase letter,lowercase letter and special chararcters.")]
     public string Password { get; set; } = null!;
 
     [Required(ErrorMessage = "Please enter your Address"), MaxLength(50)]
