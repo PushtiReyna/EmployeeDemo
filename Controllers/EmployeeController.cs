@@ -13,7 +13,6 @@ namespace EmployeeDBFirstDemo.Controllers
             _db = db;
         }
 
-
         public IActionResult Index()
         {
             var result = _db.Employees.ToList();
@@ -32,7 +31,6 @@ namespace EmployeeDBFirstDemo.Controllers
             {
                 var employee = new Employee()
                 {
-
                     Employeename = model.Employeename,
                     Gender= model.Gender,
                     Dob=model.Dob,
@@ -57,19 +55,6 @@ namespace EmployeeDBFirstDemo.Controllers
             }
         }
 
-
-        public IActionResult Delete(int id)
-        {
-
-            var employee = _db.Employees.SingleOrDefault(x => x.EmployeeId == id);
-            if (employee != null)
-            {
-                _db.Employees.Remove(employee);
-                _db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return RedirectToAction("Index");
-        }
         [HttpGet]
         public ActionResult Edit(int id)
         {
@@ -115,6 +100,18 @@ namespace EmployeeDBFirstDemo.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index");
            
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var employee = _db.Employees.SingleOrDefault(x => x.EmployeeId == id);
+            if (employee != null)
+            {
+                _db.Employees.Remove(employee);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return RedirectToAction("Index");
         }
 
     }

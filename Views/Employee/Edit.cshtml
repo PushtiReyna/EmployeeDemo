@@ -80,21 +80,21 @@
 
                 <div class="mb-3">
                     <label class=" form-label">Email</label>
-                    <input type="email" class=" form-control" asp-for=Email placeholder="Enter Email" />
+                    <input type="email"  class=" form-control" asp-for=Email placeholder="Enter Email" />
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
 
 
                 <div class="mb-3">
                     <label class=" form-label">Mobile No.</label>
-                    <input type="number" class=" form-control" asp-for=Mobile1 placeholder="Enter Mobile No." />
+                    <input type="tel"  class=" form-control" asp-for=Mobile1 placeholder="Enter Mobile No." />
                     <span asp-validation-for="Mobile1" class="text-danger"></span>
                 </div>
 
                 <div class="mb-3">
                     <label class=" form-label">Alternate Mobile No.</label>
-                    <input type="number" class=" form-control" asp-for=Mobile2 placeholder="Enter Alternate Mobile No." />
-                    <span asp-validation-for="Mobile2" class="text-danger"></span>
+                    <input type="tel"class=" form-control" asp-for=Mobile2 placeholder="Enter Alternate Mobile No." />
+                    @*<span asp-validation-for="Mobile2" class="text-danger"></span>*@
                 </div>
 
                 <div class="col-12">
