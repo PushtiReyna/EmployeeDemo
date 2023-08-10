@@ -1,16 +1,18 @@
-using EmployeeDBFirstDemo.Data;
+
+using EmployeeDBFirstDemo.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
 builder.Services.AddControllersWithViews();
-
-
 IConfiguration configuration = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json")
     .Build();
-builder.Services.AddDbContext<ApplicationDBContext>(option => option.UseSqlServer(configuration.GetConnectionString("DBconnection")));
+builder.Services.AddDbContext<EmployeeDbContext>(option => option.UseSqlServer(configuration.GetConnectionString("DBconnection")));
+
 
 var app = builder.Build();
 

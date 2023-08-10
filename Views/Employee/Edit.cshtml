@@ -1,0 +1,116 @@
+﻿@model EmployeeDBFirstDemo.Models.Employee
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Update</h1>
+
+<div class=" container">
+    <div class="row">
+        <div class=" col-4  offset-4">
+            <form asp-action="Edit" method="post">
+
+                <div class="mb-3">
+                    <label class=" form-label">Employee Id</label>
+                    <input type="text" class=" form-control" asp-for=EmployeeId readonly />
+                   
+                </div>
+
+                <div class="mb-3">
+                    <label class=" form-label">Employee Name</label>
+                    <input type="text" class=" form-control" asp-for=Employeename placeholder="Enter Name" />
+                    <span asp-validation-for="Employeename" class="text-danger"></span>
+                </div>
+
+                <div>
+                    <label class=" form-label">Gender</label>
+                    <br />
+                    <table>
+                        <tr>
+                            <td>
+                                <label>Male</label>
+                                <input type="radio" asp-for=Gender value="Male" />
+
+                                <label>Female</label>
+                                <input type="radio" asp-for=Gender value="Female" />
+                                <br />
+                            </td>
+                            <td>
+                                <span asp-validation-for="Gender" class="text-danger"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="mb-3">
+                    <label class=" form-label">Date Of Birth</label>
+                    <input type="date" class=" form-control" asp-for=Dob placeholder="Enter Date of Birth" />
+                    <span asp-validation-for="Dob" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class=" form-label">Department</label>
+                    <input type="text" class=" form-control" asp-for=Department placeholder="Enter Department" />
+                    <span asp-validation-for="Department" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class=" form-label">Username</label>
+                    <input type="text" class=" form-control" asp-for=Username placeholder="Enter Username" />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class=" form-label">Password</label>
+                    <input type="text" class=" form-control" asp-for=Password placeholder="Enter Password" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class=" form-label">Address</label>
+                    <textarea rows="3" cols="15" class=" form-control" asp-for=Address placeholder="Enter Address"></textarea>
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class=" form-label">Pincode</label>
+                    <input type="number" class=" form-control" asp-for=Pincode placeholder="Enter Pincode" />
+                    <span asp-validation-for="Pincode" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class=" form-label">Email</label>
+                    <input type="email" class=" form-control" asp-for=Email placeholder="Enter Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+
+                <div class="mb-3">
+                    <label class=" form-label">Mobile No.</label>
+                    <input type="number" class=" form-control" asp-for=Mobile1 placeholder="Enter Mobile No." />
+                    <span asp-validation-for="Mobile1" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class=" form-label">Mobile2</label>
+                    <input type="number" class=" form-control" asp-for=Mobile2 placeholder="Enter Mobile2" />
+                    <span asp-validation-for="Mobile2" class="text-danger"></span>
+                </div>
+
+                <div class="col-12">
+
+                    <button type="submit" class=" btn btn-primary ">Update</button>
+
+                    <a class=" btn  btn-danger m-1  text-white" asp-action="Index">Cancel</a>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+@section scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
